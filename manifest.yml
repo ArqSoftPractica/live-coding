@@ -1,0 +1,8 @@
+---
+applications:
+- name: asp-live-coding
+  buildpacks:
+    - https://github.com/cloudfoundry/ruby-buildpack.git
+  memory: 128M
+  instances: 1
+  command: bundle exec bin/rake db:migrate && bin/rails server -b 0.0.0.0 -p $PORT -e $RAILS_ENV
